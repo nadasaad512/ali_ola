@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "302593339881",
+    "project_id": "aliola-b6290",
+    "storage_bucket": "aliola-b6290.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302593339881:android:f63bd4d6f20ec75ed4db78",
+        "android_client_info": {
+          "package_name": "com.example.ali_ola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302593339881-t6lq8ja781e0o08e0tnk410cgcgnci5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmQeUf_xDry_j-61WEaGhZPwk2Q5ywwR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302593339881-t6lq8ja781e0o08e0tnk410cgcgnci5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
