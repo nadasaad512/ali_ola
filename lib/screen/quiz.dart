@@ -98,7 +98,7 @@ class _REED_QUIZState extends State<REED_QUIZ> {
                     alignment: Alignment.center,
                     color: Colors.red,
                     child: Text(
-                      'Delete',
+                      'حذف',
                       style: TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),

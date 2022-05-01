@@ -26,12 +26,7 @@ class FirestoreHelper {
   }
 
 
-
-
-
-
-
- CreatQuiz (String idClass,String idTerm,String idQuiz, String nameQuiz)async{
+  CreatQuiz (String idClass,String idTerm,String idQuiz, String nameQuiz)async{
     Quiz quiz = Quiz(id: idQuiz, namequiz: nameQuiz);
     await   _firebaseFirestore
         .collection('Classes')
@@ -80,7 +75,7 @@ class FirestoreHelper {
   }
   deleteQuestion({required  String idClass,required String idTerm,required String idQuiz,required String idQu}) async {
     await _firebaseFirestore.
-       collection('Classes')
+    collection('Classes')
         .doc(idClass)
         .collection('Term')
         .doc(idTerm)
@@ -101,52 +96,17 @@ class FirestoreHelper {
         .delete();
   }
 
-  CreatQuestion
-      ({
+
+
+
+  CreatQuestion({
     required  String idClass,
     required String idTerm,
     required String idQuiz,
     required String idQu,
-    required  String Question,
-    required  String Statment,
-     String op1="",
-     String op2="",
-     String op3="",
-    String op4="",
-    String? correctanswe,
-    String? im_Statment,
-    String? name_Section,
-    String? new_Section,
-    String? im_option1,
-    String? im_option2,
-    String? im_option3,
-    String? im_option4,
+    required Questions questions
+  })async{
 
-
-
-      })async{
-
-    Questions questions =
-    Questions(
-        id: idQu,
-        option1: op1,
-        option2: op2,
-        Question:Question ,
-        option3: op3,
-        option4: op4,
-        Correctanswer: correctanswe,
-      Statment: Statment,
-      im_option1: im_option1,
-      im_option2: im_option2,
-      im_option3: im_option3,
-      im_option4: im_option4,
-      im_Statment: im_Statment,
-      name_Section: name_Section,
-      new_Section: new_Section
-
-
-
-    );
     await  _firebaseFirestore
         .collection('Classes')
         .doc(idClass)
@@ -162,6 +122,36 @@ class FirestoreHelper {
 
 
   }
+
+
+  EditCreatQuestion
+      ({
+    required  String idClass,
+    required String idTerm,
+    required String idQuiz,
+    required String idQu,
+    required Questions questions
+
+
+
+  })async{
+
+
+    await  _firebaseFirestore
+        .collection('Classes')
+        .doc(idClass)
+        .collection('Term')
+        .doc(idTerm)
+        .collection('Quiz')
+        .doc(idQuiz)
+        .collection('Question')
+        .doc(idQu)
+        .update(questions.toMap());
+
+
+
+  }
+
 
 
   Future<List<Questions>> getAllQuestion({required  String idClass,required String idTerm,required String idQuiz} ) async

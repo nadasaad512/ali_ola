@@ -2,27 +2,21 @@ import 'dart:io';
 
 class Questions {
 
- late String id;
- late String Question;
- late String Statment;
-
- String? Correctanswer;
-
+  late String id;
+  late String Question;
+  late String Statment;
+  String? Correctanswer;
 
 
- String option1="";
-  String option2="";
-  String option3="";
-  String option4="";
-
+  String? option1;
+  String? option2;
+  String? option3;
+  String? option4;
   String? im_option1;
- String? im_option2;
- String? im_option3;
- String? im_option4;
-
-
-
- String? im_Statment;
+  String? im_option2;
+  String? im_option3;
+  String? im_option4;
+  String? im_Statment;
   String? new_Section;
   String ?name_Section;
 
@@ -30,28 +24,29 @@ class Questions {
 
 
 
- Questions({
-   required this.id,
-   required this.Question,
-   required this.Statment,
-   this.option1="",
-   this.option2="",
-   this.option3="",
-   this.option4='',
+  Questions({
+    required this.id,
+    required this.Question,
+    required this.Statment,
     this.Correctanswer,
+    this.option1,
+    this.option2,
+    this.option3,
+    this.option4,
 
 
-   this.im_Statment,
-   this.name_Section,
-  this.new_Section,
-   this.im_option1,
- this.im_option2,
-  this.im_option3,
-   this.im_option4
 
- });
+    this.im_Statment,
+    this.name_Section,
+    this.new_Section,
+    this.im_option1,
+    this.im_option2,
+    this.im_option3,
+    this.im_option4
 
- Questions.fromMap(Map<String, dynamic> map) {
+  });
+
+  Questions.fromMap(Map<String, dynamic> map) {
     this.Question = map['Question'];
     this.option1 = map['option1'];
     this.option2 = map['option2'];

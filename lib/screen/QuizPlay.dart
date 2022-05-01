@@ -124,7 +124,7 @@ class _QUIZPLAYState extends State<QUIZPLAY> {
 
 
 
-                if (Provider.of<AppProvider>(context).questions[index].option1.isEmpty) Align(
+                if (Provider.of<AppProvider>(context).questions[index].option1==null) Align(
                   alignment: Alignment.topRight,
 
                   child: Row(
@@ -339,6 +339,8 @@ class _QUIZPLAYState extends State<QUIZPLAY> {
 
 
                 SizedBox(height: 30.h),
+
+
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.blue.shade900,
@@ -358,11 +360,12 @@ class _QUIZPLAYState extends State<QUIZPLAY> {
 
 
 
-                      if(index<14){
+                      if(index<9){
                         setState(() {
                           index++;
                         });
-                      }else{
+                      }
+                      else{
                         Provider.of<AppProvider>(context,listen: false).CreatStudent(idClass: widget.idClass, idTerm: widget.idTerm, idQuiz: widget.idQuiz, Studentname: widget.studentname, score: Score);
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) {
                           return yourScore(studentname: widget.studentname,Score: Score ,);
@@ -392,7 +395,7 @@ class _QUIZPLAYState extends State<QUIZPLAY> {
 
 
 
-                    }, child: Text(index==14?"لنرى النتيجة معا ":"التالي "))
+                    }, child: Text(index==9?"لنرى النتيجة معا ":"التالي "))
               ],
             ),
           ),

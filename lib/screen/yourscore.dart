@@ -52,21 +52,23 @@ class yourScore extends StatelessWidget{
 
 
 
-              if (Score==15||Score==14)
+              if (Score==9||Score==10)
                 LottieBuilder.asset("animations/73862-confetti.json")
-              else if (Score==13||Score==12||Score==11||Score==10||Score==9||Score==8||Score==7)
+              else if (Score==8||Score==7||Score==6||Score==5)
                 LottieBuilder.asset("animations/87948-emoji-ok.json")
               else
 
                 LottieBuilder.asset("animations/87947-emoji-cry.json"),
 
               SizedBox(height: 30.h,),
-              Text(("${Score}/15").toString(),style: TextStyle(
+              Text(("${Score}/10").toString(),style: TextStyle(
                   fontSize: 40
               ),),
 
             ],
+
           ),
+
         ),
       ),
     );
